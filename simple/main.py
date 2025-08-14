@@ -258,7 +258,7 @@ def main():
         print("4) Ask AI")
         print("5) Save session")
         print("6) Exit")
-        choice = input("\nSelect: ").strip()
+        choice = input("\nSelect: ").strip() 
         if choice == "1":
             load_data()
         elif choice == "2":
