@@ -1,7 +1,7 @@
 
 # Pregnancy Data Analyzer with AI
 
-A Python program to explore, visualize, and analyze pregnancy-related data using AI. Users can describe datasets, generate visualizations, ask AI questions, and save a report as a PDF.
+A Python program to explore, visualize, and analyze pregnancy-related data using AI. Users can describe datasets, generate visualizations, ask AI questions, and save a report.
 
 ---
 
@@ -58,20 +58,20 @@ Run the program using Python:
 
 ```bash
 python main.py
-```
+````
 
+Menu options:
 
 * **1 – Load data:** Load default or upload your dataset.
-* **2 – Describe data:** Print dataset summary.
-* **3 – Visualize data:** Generate bar plots, pie charts, and heatmaps.
-* **4 – Ask AI:** Ask questions about your dataset.
-* **5 – Save report:** Save collected outputs and plots to a PDF file.
-* **6 – Exit:** Close the program.
+* **2 – Describe data:** Print dataset summary and save it to session log.
+* **3 – Visualize data:** Generate bar plots, pie charts, and heatmaps. Images are saved automatically in the working directory.
+* **4 – Ask AI:** Ask questions about your dataset. Answers are saved to session log.
+* **5 – Save session:** Save all collected outputs (descriptions, AI Q\&A, visualizations) into a folder. A `session_log.md` file will be created with text outputs and images.
+* **6 – Exit:** Close the program. Any unsaved temporary images will be deleted automatically.
 
----
+```
 
 ## Notes
 
 * Only numeric columns are considered for correlation and heatmap plots.
-* PDF report includes all descriptions, AI Q\&A, and generated plots.
 * Ensure the OpenAI API key is valid to use the AI features.
