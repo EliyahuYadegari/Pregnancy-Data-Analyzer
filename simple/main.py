@@ -228,11 +228,17 @@ def save_session():
         os.makedirs(folder, exist_ok=True)
 
         # Save text log
-        text_file = os.path.join(folder, "session_log.txt")
+        text_file = os.path.join(folder, "session_log.md")
+        text_file = os.path.join(folder, "session_log.md")
         with open(text_file, "w", encoding="utf-8-sig") as f:
             for entry in SESSION_LOG:
                 if not entry["is_image"]:
-                    f.write(f"== {entry['title']} ==\n{entry['content']}\n\n")
+                    f.write(f"## {entry['title']}\n\n")
+                    f.write("```\n")  # פתיחת block code
+                    f.write(f"{entry['content']}\n")
+                    f.write("```\n\n")  # סגירת block code
+                    f.write("---\n\n")   # מפריד בין חלקים
+
         # Save images
         for entry in SESSION_LOG:
             if entry["is_image"]:
@@ -246,6 +252,16 @@ def save_session():
     except Exception as e:
         print(f"Error saving session: {e}")
     pause()
+
+def cleanup_temp_images():
+    """Delete temporary image files created during the session."""
+    try:
+        for entry in SESSION_LOG:
+            if entry["is_image"]:
+                if os.path.exists(entry["content"]):
+                    os.remove(entry["content"])
+    except Exception as e:
+        print(f"Error during cleanup: {e}")
 
 def main():
     """Main menu loop for the Pregnancy Data Analyzer."""
@@ -271,6 +287,7 @@ def main():
             save_session()
         elif choice == "6":
             print("Thank you for using Pregnancy Data Analyzer. Mazal Tov!")
+            cleanup_temp_images()
             sys.exit(0)
         else:
             print("Invalid choice.")
