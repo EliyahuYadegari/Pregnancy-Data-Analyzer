@@ -41,7 +41,7 @@ cd pregnancy-data-analyzer
 
 ```
 OPENAI_API_KEY=your_api_key_here
-OPENAI_MODEL=gpt-5-nano
+OPENAI_MODEL=gpt-4.1-nano
 ```
 
 3. Place the default `pregnancy_data.csv` in the project folder, or upload your own CSV with these columns:
