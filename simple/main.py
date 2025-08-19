@@ -26,10 +26,6 @@ pd.set_option("display.max_rows", 30)
 pd.set_option("display.max_columns", 20)
 pd.set_option("display.precision", 4)
 
-def clear_screen():
-    """Clear the console screen depending on OS (Windows or Mac/Linux)."""
-    os.system("cls" if os.name == "nt" else "clear")
-
 def pause():
     """Pause the program until the user presses Enter."""
     input("\nPress Enter to continue...")
@@ -57,7 +53,6 @@ def validate_dataset(df):
 def load_data():
     """Allow the user to choose between loading the default dataset or uploading their own CSV."""
     global DF, DATA_NAME
-    clear_screen()
     print("== Load Data ==")
     print("1. Use the pre-loaded dataset.")
     print("2. Upload your own data.")
@@ -126,7 +121,6 @@ def describe_data():
         print("Load data first (option 1).")
         pause()
         return
-    clear_screen()
     print("== Describe Data ==")
     profile = quick_profile(DF)
     print(profile)
@@ -229,7 +223,6 @@ def save_session():
 
         # Save text log
         text_file = os.path.join(folder, "session_log.md")
-        text_file = os.path.join(folder, "session_log.md")
         with open(text_file, "w", encoding="utf-8-sig") as f:
             for entry in SESSION_LOG:
                 if not entry["is_image"]:
@@ -294,5 +287,4 @@ def main():
             pause()
 
 if __name__ == "__main__":
-    clear_screen()
     main()
