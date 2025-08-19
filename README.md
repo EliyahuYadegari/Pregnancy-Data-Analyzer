@@ -18,12 +18,12 @@ A Python program to explore, visualize, and analyze pregnancy-related data using
 ## Requirements
 
 * Python 3.8+
-* Packages: `pandas`, `matplotlib`, `seaborn`, `openai`, `python-dotenv`, `reportlab`
+* Packages: `pandas`, `matplotlib`, `seaborn`, `openai`, `python-dotenv`, `reportlab`, `ext..`
 
-Install dependencies with:
+Install all dependencies with:
 
 ```bash
-pip install pandas matplotlib seaborn openai python-dotenv reportlab
+pip install -r requirements.txt
 ```
 
 ---
